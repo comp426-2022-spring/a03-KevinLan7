@@ -25,16 +25,14 @@ app.get('/app/', (req, res) => {
 });
 
 app.get('/app/flip',(req,res)=>{
-    res.statusCode = 200;
     let flip = coinFlip();
-    res.status.json({flip:flip});
+    res.status(200).json({'flip':flip});
 });
 
 app.get('/app/flips/:number', (req, res) => {
-    res.statusCode = 200;
     let result = coinFlips(req.params.number);
     let count = coinFlips(result);
-    res.status.json({raw:result,summary:count});
+    res.status(200).json({'raw':result,'summary':count});
 });
 
 app.get('/app/flip/call/heads',(req,res)=>{
