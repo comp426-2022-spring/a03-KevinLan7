@@ -1,9 +1,8 @@
 import minimist from "minimist";
 import express from "express";
-import {coinFlip,coinFlips,countFlips,flipACoin} from "./coin.mjs";
+import {coinFlip,coinFlips,countFlips,flipACoin} from "./modules/coin.mjs";
 
 // Require Express.js
-const express = require('express');
 const app = express();
 
 let args = minimist(process.argv.slice(2));
@@ -46,5 +45,4 @@ app.get('/app/flip/call/tails',(req,res)=>{
 // Default response for any other request
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND');
-    res.type("text/plain");
 });
