@@ -1,6 +1,6 @@
 import minimist from "minimist";
 import express from "express";
-import {coinFlip,coinFlips,countFlips,flipACoin} from "./modules/coin.mjs";
+import {coinFlip,coinFlips,countFlips,flipACoin} from "./coin.mjs";
 
 // Require Express.js
 const app = express();
@@ -34,13 +34,13 @@ app.get('/app/flips/:number', (req, res) => {
     res.status(200).json({'raw':result,'summary':count});
 });
 
-app.get('/app/flip/call/heads',(req,res)=>{
-    res.status(200).json(flipACoin("heads"));
-});
+//app.get('/app/flip/call/heads',(req,res)=>{
+//    res.status(200).json(flipACoin("heads"));
+//});
 
-app.get('/app/flip/call/tails',(req,res)=>{
-    res.status(200).json(flipACoin("tails"));
-});
+//app.get('/app/flip/call/tails',(req,res)=>{
+//    res.status(200).json(flipACoin("tails"));
+//});
 
 // Default response for any other request
 app.use(function(req, res){
