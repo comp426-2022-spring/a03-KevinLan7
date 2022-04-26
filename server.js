@@ -29,7 +29,7 @@ app.get('/app/flip',(req,res)=>{
 
 app.get('/app/flips/:number', (req, res) => {
     let flip = coinFlips(req.params.number);
-    let count = coinFlips(flip);
+    let count = countFlips(flip);
     res.status(200).json({'raw':flip,'summary':count});
 });
 
