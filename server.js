@@ -7,7 +7,7 @@ const app = express();
 
 let args = minimist(process.argv.slice(2));
 let port = 'port';
-let HTTP_PORT = min[port] || 5000;
+let HTTP_PORT = minimist[port] || 5000;
 
 // Start an app server
 const server = app.listen(HTTP_PORT, () => {
@@ -29,20 +29,21 @@ app.get('/app/flip',(req,res)=>{
 });
 
 app.get('/app/flips/:number', (req, res) => {
-    let result = coinFlips(req.params.number);
-    let count = coinFlips(result);
-    res.status(200).json({'raw':result,'summary':count});
+    let flip = coinFlips(req.params.number);
+    let count = coinFlips(flip);
+    res.status(200).json({'raw':flip,'summary':count});
 });
 
-//app.get('/app/flip/call/heads',(req,res)=>{
-//    res.status(200).json(flipACoin("heads"));
-//});
+app.get('/app/flip/call/heads',(req,res)=>{
+    res.status(200).json(flipACoin("heads"));
+});
 
-//app.get('/app/flip/call/tails',(req,res)=>{
-//    res.status(200).json(flipACoin("tails"));
-//});
+app.get('/app/flip/call/tails',(req,res)=>{
+    res.status(200).json(flipACoin("tails"));
+});
 
 // Default response for any other request
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND');
 });
+
