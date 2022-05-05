@@ -1,0 +1,25 @@
+{
+  "name": "a03-kevinlan7",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "make an api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a03-KevinLan7.git"
+  },
+  "author": "KevinLan7",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a03-KevinLan7/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a03-KevinLan7#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "minimist": "^1.2.6",
+    "yargs": "^17.4.1"
+  }
+}
